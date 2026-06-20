@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A romantic birthday tribute for Shrishty Saigal — 21st June">
+    <title>✨ Happy Birthday Shrishty — From Abhay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/config.js"></script>
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-inner">
+            <div class="loader-heart">♥</div>
+            <p class="loader-text">A gift from Abhay...</p>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- PIN SCREEN -->
+    <div id="pin-screen" class="pin-screen" style="display:none;">
+        <div class="pin-inner">
+            <div class="pin-heart">♥</div>
+            <p class="pin-title">Enter the Secret Code</p>
+            <p class="pin-subtitle">To unlock your birthday surprise</p>
+            <div class="pin-dots">
+                <span class="pin-dot" id="dot-0"></span>
+                <span class="pin-dot" id="dot-1"></span>
+                <span class="pin-dot" id="dot-2"></span>
+            </div>
+            <div class="pin-pad">
+                <button class="pin-btn" data-num="1">1</button>
+                <button class="pin-btn" data-num="2">2</button>
+                <button class="pin-btn" data-num="3">3</button>
+                <button class="pin-btn" data-num="4">4</button>
+                <button class="pin-btn" data-num="5">5</button>
+                <button class="pin-btn" data-num="6">6</button>
+                <button class="pin-btn" data-num="7">7</button>
+                <button class="pin-btn" data-num="8">8</button>
+                <button class="pin-btn" data-num="9">9</button>
+                <button class="pin-btn pin-clear" data-num="C">C</button>
+                <button class="pin-btn" data-num="0">0</button>
+                <button class="pin-btn pin-ok" data-num="OK">✓</button>
+            </div>
+            <p class="pin-error" id="pin-error">Wrong code. Try again!</p>
+        </div>
+    </div>
+
+    <!-- BACKGROUND AUDIO -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- BACKGROUND VIDEO -->
+    <div class="bg-video-wrapper">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source src="visit.mp4" type="video/mp4">
+        </video>
+        <div class="bg-overlay"></div>
+        <div class="bg-fallback"></div>
+    </div>
+
+    <!-- PARTICLES -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- FILM STRIPS -->
+    <div class="film-strip film-strip-left">
+        <div class="film-frames" id="film-left"></div>
+    </div>
+    <div class="film-strip film-strip-right">
+        <div class="film-frames" id="film-right"></div>
+    </div>
+
+    <!-- SLIDES -->
+    <main class="slides-container" id="slides-container">
+
+        <!-- SLIDE 1: COVER -->
+        <section class="slide active" id="slide-cover" data-slide="0">
+            <div class="slide-content cover-content">
+                <div class="cover-ornament top">✦ ──────────── ✦</div>
+                <p class="cover-prelude">A Romantic Birthday Tribute</p>
+                <h1 class="cover-title">
+                    <span class="cover-name">Shrishty</span>
+                    <span class="cover-surname">Saigal</span>
+                </h1>
+                <div class="cover-heart-line"><span class="heart-dot">♥</span></div>
+                <p class="cover-date">21st June 2009</p>
+                <p class="cover-from">— with love from Abhay Singh Rajput —</p>
+                <div class="cover-ornament bottom">✦ ──────────── ✦</div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: BIRTHDAY GIRL -->
+        <section class="slide" id="slide-birthday-girl" data-slide="1">
+            <div class="slide-content birthday-girl-content">
+                <h2 class="slide-heading">The Birthday Girl</h2>
+                <div class="video-frame">
+                    <div class="video-corner tl">✦</div>
+                    <div class="video-corner tr">✦</div>
+                    <div class="video-corner bl">✦</div>
+                    <div class="video-corner br">✦</div>
+                    <video id="birthday-girl-video" autoplay muted loop playsinline>
+                        <source src="birthday_girls.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="birthday-quote">"A smile that lights up every room, a heart that makes the world warmer."</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: MEMORIES -->
+        <section class="slide" id="slide-memories" data-slide="2">
+            <div class="slide-content memories-content">
+                <h2 class="slide-heading">Our Memories</h2>
+                <div class="film-reel">
+                    <div class="film-reel-track" id="film-reel-track">
+                        <div class="film-photo">
+                            <img src="Screenshot_20260108-225207.png" alt="Memory 1" loading="lazy">
+                            <div class="photo-caption">A moment to cherish</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260212-163047.png" alt="Memory 2" loading="lazy">
+                            <div class="photo-caption">Laughter we shared</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260303-110026.png" alt="Memory 3" loading="lazy">
+                            <div class="photo-caption">Beautiful times</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260319-151952.png" alt="Memory 4" loading="lazy">
+                            <div class="photo-caption">Unforgettable</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="assets/Screenshot_20260513-153105 (1).png" alt="Memory 5" loading="lazy">
+                            <div class="photo-caption">Precious moments</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="assets/Screenshot_20260516-150429.png" alt="Memory 6" loading="lazy">
+                            <div class="photo-caption">Together forever</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260518-134519.png" alt="Memory 7" loading="lazy">
+                            <div class="photo-caption">Golden memories</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260526-130418.png" alt="Memory 8" loading="lazy">
+                            <div class="photo-caption">Heart full of love</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260608-160739.png" alt="Memory 9" loading="lazy">
+                            <div class="photo-caption">Always smiling</div>
+                        </div>
+                        <div class="film-photo">
+                            <img src="Screenshot_20260610-035005.png" alt="Memory 10" loading="lazy">
+                            <div class="photo-caption">The best of us</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="memories-sub">Every picture tells a story, every story has you in it ♥</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: LETTER -->
+        <section class="slide" id="slide-letter" data-slide="3">
+            <div class="slide-content letter-content">
+                <div class="letter-paper">
+                    <div class="letter-seal">♥</div>
+                    <p class="letter-salutation">My Dearest Shrishty,</p>
+                    <div class="letter-body">
+                        <p>On your special day, I want you to know how incredibly blessed I am to have you in my life.</p>
+                        <p>Your smile is the first thing that brightens my morning and the last thing I think of at night. Every moment with you feels like a beautiful dream I never want to wake up from.</p>
+                        <p>As you turn another year older, I promise to be there for every laugh, every tear, and every adventure that life brings our way.</p>
+                        <p>Happy Birthday, my love. Here is to celebrating you today and always.</p>
+                    </div>
+                    <p class="letter-signoff">Forever Yours,</p>
+                    <p class="letter-name">Abhay Singh Rajput</p>
+                    <p class="letter-date">21st June</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: QUALITIES -->
+        <section class="slide" id="slide-qualities" data-slide="4">
+            <div class="slide-content qualities-content">
+                <h2 class="slide-heading">Why You are Extraordinary</h2>
+                <div class="qualities-grid">
+                    <div class="quality-card">
+                        <div class="quality-icon">💫</div>
+                        <p class="quality-text">Your kindness touches every heart you meet</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">🌹</div>
+                        <p class="quality-text">Your beauty rivals the stars above</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">🎵</div>
+                        <p class="quality-text">Your laughter is my favorite melody</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">🔥</div>
+                        <p class="quality-text">Your passion inspires everyone around you</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">🌙</div>
+                        <p class="quality-text">Your dreams light up the darkest nights</p>
+                    </div>
+                    <div class="quality-card">
+                        <div class="quality-icon">💎</div>
+                        <p class="quality-text">Your soul is rarer than any gem</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: TIMELINE -->
+        <section class="slide" id="slide-timeline" data-slide="5">
+            <div class="slide-content timeline-content">
+                <h2 class="slide-heading">Our Journey Together</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-side="left">
+                        <div class="timeline-dot">♥</div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">The Beginning</span>
+                            <p>The day our paths crossed and everything changed forever</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-side="right">
+                        <div class="timeline-dot">★</div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">Growing Closer</span>
+                            <p>Every conversation, every laugh, every moment drawing us together</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-side="left">
+                        <div class="timeline-dot">♥</div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">Beautiful Memories</span>
+                            <p>Capturing moments that will last a lifetime</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-side="right">
+                        <div class="timeline-dot">★</div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">Today</span>
+                            <p>Celebrating the most wonderful person in my world</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-side="left">
+                        <div class="timeline-dot">♥</div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">Forever</span>
+                            <p>Because our story is just beginning...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: WISHES -->
+        <section class="slide" id="slide-wishes" data-slide="6">
+            <div class="slide-content wishes-content">
+                <h2 class="slide-heading">Birthday Wishes</h2>
+                <div class="wish-letters">
+                    <div class="wish-letter" style="--rot: -3deg; --delay: 0s;">
+                        <div class="wish-inner">
+                            <p>May your days be filled with sunshine and your nights with stars</p>
+                            <span class="wish-stamp">♥</span>
+                        </div>
+                    </div>
+                    <div class="wish-letter" style="--rot: 2deg; --delay: 0.15s;">
+                        <div class="wish-inner">
+                            <p>May every wish you make come true a hundredfold</p>
+                            <span class="wish-stamp">✦</span>
+                        </div>
+                    </div>
+                    <div class="wish-letter" style="--rot: -1.5deg; --delay: 0.3s;">
+                        <div class="wish-inner">
+                            <p>May love surround you today and always</p>
+                            <span class="wish-stamp">♥</span>
+                        </div>
+                    </div>
+                    <div class="wish-letter" style="--rot: 3.5deg; --delay: 0.45s;">
+                        <div class="wish-inner">
+                            <p>May this year be your most beautiful one yet</p>
+                            <span class="wish-stamp">✦</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cake-section">
+                    <div class="cake">🎂</div>
+                    <p class="cake-text">Make a wish, beautiful!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: FINAL -->
+        <section class="slide" id="slide-final" data-slide="7">
+            <div class="slide-content final-content">
+                <div class="final-heart-pulse">♥</div>
+                <h2 class="final-heading">Happy Birthday</h2>
+                <p class="final-name">Shrishty Saigal</p>
+                <div class="final-divider"><span>✦</span></div>
+                <p class="final-message">You are the most beautiful chapter of my story.<br>Here is to writing many more together.</p>
+                <p class="final-signoff">With all my love,</p>
+                <p class="final-from">Abhay Singh Rajput</p>
+                <p class="final-date">21st June 2025</p>
+                <div class="final-hearts"><span>♥</span><span>♥</span><span>♥</span></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AUDIO -->
+    <audio id="bg-music" loop>
+        <source src="audio/birthday-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
